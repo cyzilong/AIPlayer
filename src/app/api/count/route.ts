@@ -5,14 +5,13 @@ const API_KEY = process.env.API_KEY;
 const AUDIENCE_ID = process.env.AUDIENCE_ID;
 
 export async function GET(req: Request) {
+
   try {
     client.setConfig({
       apiKey: API_KEY,
       server: SERVER,
     });
-    const rsp = await client.lists.getListMember(AUDIENCE_ID!, "", { count: 1 }) as any;
-
-    console.debug(rsp);
+    const rsp = await client.lists.getListMember(AUDIENCE_ID!, "", { count: 1, excludeFields: [new URL(req.url).search] }) as any;
 
     return new Response(JSON.stringify({ count: rsp.total_items }), {
       status: 200,

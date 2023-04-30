@@ -59,7 +59,7 @@ export default function Home() {
 
   const [count, setCount] = useState(0);
   async function getCount() {
-    const res = await fetch('/api/count', {
+    const res = await fetch(`/api/count?q=${Date.now()}`, {
       headers: {
         'Content-Type': 'application/json',
       },
