@@ -10,7 +10,9 @@ export async function GET(req: Request) {
       apiKey: API_KEY,
       server: SERVER,
     });
-    const rsp = await client.lists.getListMember(AUDIENCE_ID!, "", { count: 1 }) as any
+    const rsp = await client.lists.getListMember(AUDIENCE_ID!, "", { count: 1 }) as any;
+
+    console.debug(rsp);
 
     return new Response(JSON.stringify({ count: rsp.total_items }), {
       status: 200,
