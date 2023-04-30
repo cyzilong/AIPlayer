@@ -53,7 +53,9 @@ export default function Home() {
 
     getCount();
     toast.dismiss(notice);
-    setLoading(false)
+    setLoading(false);
+
+    inputRef.current.value = '';
 
   }, [loading]);
 
