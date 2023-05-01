@@ -14,6 +14,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const getAnalyticsTag = () => {
+    return {
+      __html: `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7d409c0c61ffc9d0efba786610a3d99d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    }
+  }
+
   return (
     <html>
       <head>
@@ -24,6 +39,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
           rel="stylesheet"
         />
+        <script dangerouslySetInnerHTML={getAnalyticsTag()}/>
       </head>
       <body className={inter.className}>
         <Providers>
