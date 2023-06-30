@@ -4,6 +4,7 @@ export const line_13: Line = {
   望京西: {
     down: {
       terminus: {
+        my_direction: '霍营',
         default: '西直门',
         half_1: '立水桥',
         half_2: '回龙观',

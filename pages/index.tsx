@@ -37,7 +37,7 @@ export default function Home() {
         return (
           <div key={item.name}>
             <Container display='flex' justify='center' alignItems='center'>
-              <Text h3 color="error">[{item.line}] {item.name} {'=>'} {item.direction}</Text>
+              <Text h3 color="error">[{item.line}] {item.name} {'=>'} {item.my_direction}</Text>
             </Container>
             <Grid.Container gap={2} justify="center">
               {item.nextTimes.map((time) => {
